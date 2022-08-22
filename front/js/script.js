@@ -1,9 +1,9 @@
 const section = document.getElementById('items');
+console.log(section);
 let urlRequest = 'http://localhost:3000/api/products';
 
 async function request(){
     const response = await fetch(urlRequest);
-    // console.log(response);
     const data =  await response.json();
     console.log(data);
     data.forEach(element => {
@@ -24,7 +24,10 @@ async function request(){
         newArticle.appendChild(newImg);
         newArticle.appendChild(newH3);
         newArticle.appendChild(newP);
+        // gestion d'erreur!!!
     });
 }
 
 request();
+
+
